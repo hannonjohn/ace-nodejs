@@ -1,7 +1,7 @@
 {
 	"name": "ACE",
 	"fullName": "Allied Consultant Engineering",
-	"version": "1.0.9",
+	"version": "1.0.10",
 	"dependencies": {
 		"jquery": "2.1.4",
 		"jQuery.serializeObject": "2.0.3",
