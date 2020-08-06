@@ -1,0 +1,10 @@
+footer.main
+	div.contentWrapper
+		div.copyrightAndHomepageLink
+			span.copyright
+				span.copy &copy; 
+				span.year 2016 
+				span.text Copyright 
+			a.gotoTop.scrollTopLnk(href="#") #{appFullName}
+		div.contact
+			a.lnk(href="#{urlRelative + mainPages.contact.page}" page="#{JSON.stringify(mainPages.contact)}") Contact us

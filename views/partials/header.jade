@@ -1,0 +1,28 @@
+header.main
+	div.contentWrapper
+		a.logo.lnk(href="#{urlRelative}" page="#{JSON.stringify(mainPages.home)}")
+			img.img(src="#{urlStaticRelative}images/logos/logo.png" alt="#{appFullName}" title="#{appFullName}")
+		nav.main
+			div.actionShowMenu
+				span &nbsp;
+				span &nbsp;
+				span &nbsp;
+			ul.menu
+				li.main.noSubMenu
+					a.lnk(href="#{urlRelative}" page="#{JSON.stringify(mainPages.home)}") #{mainPages.home.title}
+				li.main.withSubMenu
+					a.lnk.nolnk
+						span.text Services
+						span.icon.plus +
+						span.icon.minus -
+					ul.subMenu
+						li.sub
+							a.lnk(href="#{urlRelative + servicePages.structuralAnalysisAndDesign.page}" page="#{JSON.stringify(servicePages.structuralAnalysisAndDesign)}") #{servicePages.structuralAnalysisAndDesign.title}
+						li.sub
+							a.lnk(href="#{urlRelative + servicePages.telecomsStructuralEngineering.page}" page="#{JSON.stringify(servicePages.telecomsStructuralEngineering)}") #{servicePages.telecomsStructuralEngineering.title}
+						li.sub
+							a.lnk(href="#{urlRelative + servicePages.technicalAdvisoryAndComplianceServices.page}" page="#{JSON.stringify(servicePages.technicalAdvisoryAndComplianceServices)}") #{servicePages.technicalAdvisoryAndComplianceServices.title}
+				li.main.noSubMenu
+					a.lnk.about(href="#{urlRelative}about" page="#{JSON.stringify(mainPages.about)}") About
+				li.main.noSubMenu
+					a.lnk(href="#{urlRelative}contact" page="#{JSON.stringify(mainPages.contact)}") Contact

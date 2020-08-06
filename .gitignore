@@ -1,0 +1,11 @@
+*.zip
+node_modules/
+bower_components/
+client/lib/*
+dist/
+*.min.js
+*.min.css
+*.map
+*-external.js
+*-internal.js
+awsConfig.json

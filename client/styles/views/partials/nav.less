@@ -1,0 +1,224 @@
+nav.main
+{
+	float:right;
+	margin-left:35px;
+	margin-top:20px;
+
+	ul.menu {
+		border-left:@border;
+		display:inline-block;
+	}
+	li {
+		cursor:pointer;
+		.transitionX3(background, border, color);
+
+		.lnk {
+			color:@text-colour;
+			padding:0 18px;
+			display:block;
+		}
+	}
+	li.main {
+		border-top:@border;
+		border-right:@border;
+		border-bottom:@border;
+		display:inline-block;
+
+		.lnk {
+			line-height:50px;
+		}
+		&:hover,
+		&:active,
+		&.showSubMenu {
+			background-color:@bg-colour-dark;
+			border-color:@bg-colour-dark;
+			color:#fff;
+
+			.lnk {
+				color:#fff;
+			}
+		}
+		&.selected {
+			position:relative;
+
+			&:after {
+				.transition(all);
+				content:"";
+				background:@brand-colour;
+				position:absolute;
+				bottom:0;
+				height:3px;
+				left:0;
+				right:0;
+			}
+			&.noSubMenu:hover,
+			&.noSubMenu:active {
+				cursor:default;
+				border-color:@border-color;
+				color:inherit;
+				background-color:inherit;
+			}
+			&.noSubMenu .lnk {
+				color:inherit;
+				cursor:default;
+			}
+		}
+		&.withSubMenu:hover:after,
+		&.withSubMenu:active:after,
+		&.withSubMenu.showSubMenu:after {
+			background:@bg-colour-dark;
+		}
+	}
+	.text {
+		display:inline-block;
+	}
+	.icon {
+		margin-left:10px;
+		width:8px;
+
+		&.plus {
+			display:inline-block;
+		}
+		&.minus {
+			display:none;
+			font-weight:bold;
+		}
+	}
+	ul.subMenu
+	{
+		display:none;
+		position:absolute;
+		width:262px;
+		background-color:@bg-colour-dark;
+		z-index:@z-index-sub-menu;
+
+		li.sub .lnk {
+			line-height:40px;
+			color:#fff;
+
+			&:hover,
+			&:active {
+				color:#ccc;
+			}
+		}
+	}
+	li.main.showSubMenu {
+		ul.subMenu {
+			display:block;
+		}
+		.icon.plus {
+			display:none;
+		}
+		.icon.minus {
+			display:inline-block;
+		}
+	}
+	.actionShowMenu {
+		display:none;
+		border:1px solid rgba(0, 0, 0, 0.2);
+		border-radius:3px;
+		padding:5px;
+		padding-top:3px;
+		cursor:pointer;
+		.transition(background);
+
+		span {
+			border-bottom:1px solid @brand-colour;
+			display:block;
+			line-height:3px;
+			width:10px;
+			.transition(border);
+		}
+		&:hover,
+		&:active {
+			background-color:@brand-colour;
+
+			span {
+				border-color:#fff;
+			}
+		}
+	}
+	@media screen and (max-width:@break-large) {
+		float:none;
+		display:inline-block;
+		margin-top:13px;
+		margin-left:15px;
+
+		li.main .lnk {
+			line-height:30px;
+		}
+		li .lnk {
+			padding:0 10px;
+		}
+	}
+	@media screen and (max-width:@break-medium) {
+		ul.menu {
+			display:none;
+		}
+		.actionShowMenu {
+			display:inline-block;
+		}
+	}
+	@media screen and (max-width:@break-medium) and (min-width:@break-small) {
+		ul.menu {
+			position:absolute;
+			margin-left:-215px;
+			margin-top:24px;
+		}
+		ul.menu li .lnk {
+			padding:0 16px;
+		}
+	}
+	@media screen and (max-width:@break-small) {
+		display:block;
+		margin-left:0;
+
+		.actionShowMenu {
+			position:absolute;
+			margin-left:215px;
+			margin-top:-45px !important;
+		}
+		ul.menu {
+			border-top:@border;
+			border-left:0;
+
+			li {
+				display:block;
+			}
+		}
+		li.main {
+			border-top:0;
+			border-right:@border;
+			border-bottom:@border;
+			border-left:@border;
+
+			&:hover,
+			&:active,
+			&.showSubMenu {
+				border-color:@bg-colour-dark;
+			}
+		}
+	}
+}
+nav.main.showMenu {
+	@media screen and (max-width:@break-medium) {
+		ul.menu {
+			display:block;
+		}
+		.actionShowMenu {
+			background-color:@brand-colour;
+
+			span {
+				border-color:#fff;
+			}
+		}
+	}
+	@media screen and (max-width:@break-medium) and (min-width:@break-small) {
+		margin-bottom:40px;
+	}
+	@media screen and (max-width:@break-small) {
+		ul.subMenu {
+			margin-left:-1px;
+		}
+	}
+}

@@ -1,0 +1,122 @@
+.addressesContainerAltLayout {
+	float:none;
+	margin-bottom:40px;
+	padding-left:0;
+	font-size:14px;
+
+	section.address {
+		margin-bottom:25px;
+	}
+}
+.contactContainer {
+	form.contact {
+		@inp-spacing:8px;
+		@inp-padding-horizontal:12px;
+		margin:-@inp-spacing;
+		overflow:hidden;
+
+		.inpRow {
+			.clearfix();
+		}
+		.inpWrpr {
+			position:relative;
+			width:100%;
+			padding:@inp-spacing;
+
+			&.half {
+				width:50%;
+			}
+			.txt {
+				border:1px solid #CCC;
+				.transition(all);
+				border-radius:4px;
+				width:100%;
+				display:block;
+				padding:15px 12px;
+				font-size:15px;
+				font-family:@font-family;
+				background:#FFF;
+				box-shadow:none;
+
+				&:focus {
+					box-shadow:0 0 0 1px @brand-colour;
+				}
+			}
+			textarea.txt {
+				height:200px;
+				resize:vertical;
+			}
+			label.lbl {
+				position:absolute;
+				.opacity(0);
+				.transition(all);
+				font-size:12px;
+				color:@label-colour;
+				margin:7px 12px;
+				cursor:text;
+			}
+			&.showPlaceholder {
+				.txt {
+					padding:22px 12px 8px 12px;
+				}
+				label.lbl {
+					.opacity(1);
+				}
+			}
+		}
+	}
+	.addressesContainer {
+		float:right;
+		width:330px;
+		margin-top:8px;
+		padding-left:48px;
+		font-size:15px;
+
+		.addressOuter {
+			margin-bottom:40px;
+		}
+		.title {
+			font-weight:bold;
+		}
+		.companyName {
+			
+		}
+		a.address {
+			text-decoration:none;
+		}
+		.address,
+		.phone {
+			.row {
+				line-height:25px;
+				display:block;
+			}
+			.lbl {
+				font-weight:bold;
+			}
+		}
+		.phone {
+			margin-top:20px;
+		}
+	}
+	@media screen and (max-width:720px) {
+		form.contact {
+			max-width:500px;
+		}
+		.addressesContainer {
+			.addressesContainerAltLayout();
+		}
+	}
+}
+html.browser_Safari .contactContainer {
+	.contactDetails {
+		.clearfix();
+	}
+	form.contact {
+		max-width:596px;
+	}
+	@media screen and (max-width:950px) {
+		.addressesContainer {
+			.addressesContainerAltLayout();
+		}
+	}
+}

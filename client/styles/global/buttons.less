@@ -1,0 +1,36 @@
+.btn
+{
+	background-color:@brand-colour;
+	border:1px solid #FFF;
+	border-radius:3px;
+	display:inline-block;
+	font-weight:bold;
+	font-size:16px;
+	padding:10px 25px;
+	color:#FFF;
+	cursor:pointer;
+	transition-duration:250ms;
+
+	&:hover,
+	&:active
+	{
+		transform:translateY(-2px);
+		box-shadow:0 1px rgba(0,0,0,.25), 0 5px 10px rgba(0,0,0,.25)
+	}
+	&:active
+	{
+		padding:11px 24px 9px 26px;
+	}
+	&[disabled] {
+		background-color:#CCC;
+		font-style:italic;
+
+		&:hover,
+		&:active {
+			padding:10px 25px;
+			box-shadow:none;
+			transform:inherit;
+			cursor:default;
+		}
+	}
+}

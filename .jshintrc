@@ -1,0 +1,23 @@
+{
+	"browser": true,
+	"devel": true,
+	"jquery": true,
+	"eqeqeq": false,
+	"quotmark": "single",
+	"esnext": true,
+	"undef": true,
+	"unused": true,
+	"freeze": true,
+	"latedef": true,
+	"nonew": true,
+	"notypeof": true,
+	"predef": [
+		"Modernizr",
+		"ga",
+		"_",
+		"ace"
+	],
+	"globals": {
+		
+	}
+}

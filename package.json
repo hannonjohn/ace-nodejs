@@ -1,0 +1,40 @@
+{
+	"name": "ACE",
+	"version": "1.0.9",
+	"description": "Allied Consultant Engineering",
+	"private": true,
+	"repository": {
+		"type": "git",
+		"url": "https://bitbucket.org/hannonjohn/ace"
+	},
+	"scripts": {
+		"start": "node server/main.js"
+	},
+	"dependencies": {
+		"aws-sdk": "2.2.41",
+		"body-parser": "1.15.0",
+		"compression": "1.6.0",
+		"express": "4.13.3",
+		"jade": "1.11.0",
+		"lodash": "4.5.1",
+		"serve-favicon": "2.3.0"
+	},
+	"devDependencies": {
+		"grunt": "0.4.5",
+		"grunt-auto-install": "0.3.0",
+		"grunt-contrib-clean": "0.7.0",
+		"grunt-contrib-compress": "0.14.0",
+		"grunt-contrib-concat": "0.5.1",
+		"grunt-contrib-copy": "0.8.2",
+		"grunt-contrib-jshint": "1.0.0",
+		"grunt-env": "0.4.4",
+		"grunt-express-server": "0.5.1",
+		"grunt-contrib-less": "1.1.0",
+		"grunt-contrib-uglify": "0.11.0",
+		"grunt-contrib-watch": "0.6.1",
+		"grunt-modernizr": "1.0.1",
+		"grunt-open": "0.2.3",
+		"jshint-stylish": "2.1.0",
+		"matchdep": "1.0.0"
+	}
+}

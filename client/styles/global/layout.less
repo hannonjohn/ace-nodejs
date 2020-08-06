@@ -1,0 +1,34 @@
+.pageWrapper {
+	position:relative;
+	min-height:100%;
+
+	.contentWrapper {
+		margin:0 auto;
+		padding:0 @content-wrapper-padding;
+		max-width:@body-max-width;
+	}
+	.bodyWrapper {
+		position:relative;
+		padding-top:70px;
+		padding-bottom:158px;
+
+		a {
+			color:#fff;
+			text-decoration:underline;
+
+			&:hover,
+			&:active
+			{
+				color:@brand-colour;
+			}
+		}
+		.bodyContent {
+			color:#fff;
+			min-height:500px;
+		}
+
+		@media screen and (max-width:@break-large) {
+			padding-bottom:150px;
+		}
+	}
+}

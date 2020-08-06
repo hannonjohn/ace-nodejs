@@ -1,0 +1,44 @@
+footer.main
+{
+	display:none;
+	background-color:@bg-colour-darkest;
+	color:@text-colour-light;
+	height:90px;
+	padding-top:38px;
+	position:absolute;
+	width:100%;
+	bottom:0;
+	left:0;
+	border-top:2px solid @brand-colour;
+	font-size:14px;
+
+	.contentWrapper {
+		.clearfix();
+	}
+	.copyrightAndHomepageLink {
+		float:left;
+	}
+	.contact {
+		float:right;
+
+		.lnk {
+			text-decoration:underline;
+		}
+	}
+	@media screen and (max-width:@break-medium) {
+		padding-top:25px;
+		
+		.contact {
+			margin-top:10px;
+			float:left;
+			clear:both;
+		}
+	}
+	@media screen and (max-width:@break-small) {
+		span.copyright {
+			.text {
+				display:none;
+			}
+		}
+	}
+}

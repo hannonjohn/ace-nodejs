@@ -1,0 +1,54 @@
+div.contactContainer
+	h1 Contact
+	div.contactDetails
+		div.addressesContainer
+			div.addressOuter
+				h3.title Office Location
+				a.address(href="https://www.google.ie/maps/place/Dundrum+Office+Park,+Main+St,+Dundrum,+Dublin+14" target="_blank")
+					span.row.companyName Allied Consultant Engineering
+					span.row 1st Floor, Paradigm House
+					span.row Dundrum Office Park
+					span.row Main Street
+					span.row Dundrum
+					span.row Dublin 14
+				section.phone
+					span.row
+						span.lbl Phone: 
+						span +353 86 371 5875
+			div.addressOuter
+				h3.title Postal Address
+				section.address
+					span.row.companyName Allied Consultant Engineering
+					span.row Nutgrove Community Enterprise Centre
+					span.row Nutgrove Enterprise Park
+					span.row Nutgrove Way
+					span.row Rathfarnham
+					span.row Dublin 14
+					span.row Ireland
+		form.contact
+			div.inpRow
+				div.inpWrpr.half.left
+					label.lbl(for="txtFirstName") First name
+					input.txt#txtFirstName(type="text" name="fname" placeholder="First name" maxlength="50" required)
+				div.inpWrpr.half.right
+					label.lbl(for="txtLastName") Last name
+					input.txt#txtLastName(type="text" name="lname" placeholder="Last name" maxlength="50" required)
+			div.inpRow
+				div.inpWrpr
+					label.lbl(for="txtCompany") Company (optional)
+					input.txt#txtCompany(type="text" name="company" placeholder="Company (optional)" maxlength="50")
+			div.inpRow
+				div.inpWrpr
+					label.lbl(for="txtEmail") Email
+					input.txt#txtEmail(type="email" name="email" placeholder="Email" maxlength="50" required)
+			div.inpRow
+				div.inpWrpr
+					label.lbl(for="txtPhone") Phone (optional)
+					input.txt#txtPhone(type="text" name="phone" placeholder="Phone (optional)" maxlength="50")
+			div.inpRow
+				div.inpWrpr
+					label.lbl(for="txtMessage") Message
+					textarea.txt#txtMessage(type="text" name="message" placeholder="Message" maxlength="2000" required)
+			div.inpRow
+				div.inpWrpr
+					input.btn.right.send(type="submit" value="Send")

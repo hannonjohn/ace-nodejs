@@ -1,0 +1,37 @@
+.notificationWrapper {
+	position:absolute;
+	text-align:center;
+	width:100%;
+	top:20px;
+	padding:0 @content-wrapper-padding;
+
+	.notification {
+		text-align:center;
+		display:none;
+		border:@border;
+		padding:10px;
+		background:#FFF;
+		max-width:(@body-max-width - (2 * @content-wrapper-padding));
+		margin:0 auto;
+
+		.title, .msg {
+			display:inline-block;
+		}
+		.title {
+			font-weight:bold;
+			margin-right:6px;
+		}
+		&.success {
+			color:@notify-success-colour;
+			border-color:@notify-success-colour;
+		}
+		&.error {
+			color:@notify-error-colour;
+			border-color:@notify-error-colour;
+		}
+		&.warn {
+			color:@notify-warn-colour;
+			border-color:@notify-warn-colour;
+		}
+	}
+}
