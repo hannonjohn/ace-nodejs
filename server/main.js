@@ -120,6 +120,7 @@ app.locals = {
 	appDescription: 'Allied Consultant Engineering provides high quality structural engineering services to infrastructure and building owners.',
 	appKeywords: 'Structural Engineering,Structural Engineering Telecoms,Structural Engineering Telecommunications,Structural Design,Chartered Structural Engineer,Telecoms',
 	canonicalUrl: config.canonicalUrl,
+	contactEmail: config.toEmailAddress,
 	jsProps: {
 		appVersion: appVersion,
 		pages: pages.allPages,

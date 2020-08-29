@@ -7,7 +7,7 @@
 		"url": "https://github.com/hannonjohn/ace-nodejs"
 	},
 	"scripts": {
-		"start": "node server/main.js"
+		"start": "grunt"
 	},
 	"dependencies": {
 		"aws-sdk": "2.728.0",
