@@ -1,5 +1,5 @@
 ace.contact = (function () {
-	var form, btnSend;
+	var form, inputs, btnSend;
 	var showPlaceholderClass = 'showPlaceholder';
 
 	var inputHasVal = function (input) { return $.trim(input.val()).length; };
@@ -18,13 +18,46 @@ ace.contact = (function () {
 		inpWrpr.addClass(showPlaceholderClass);
 	};
 
-	var keyup = function () { tryClearPlaceholder($(this)); };
-	var blur = function () { trySetPlaceholder($(this)); };
+	var keyup = function () {
+		tryClearPlaceholder($(this));
+	};
+
+	var blur = function () {
+		var input = $(this);
+		trySetPlaceholder(input);
+	};
+
+	var checkInputValid = function (input) {
+		if (!input.attr('required')) return true;
+		
+		return !!input.val();
+	};
+
+	var checkFormValid = function () {
+		var valid = true;
+
+		inputs.each(function (i, inp) {
+			var input = $(inp);
+			if (!checkInputValid(input)) {
+				valid = false;
+				return false;
+			}
+		});
+
+		return valid;
+	};
+
+	var validateForm = function () {
+		btnSend.attr('disabled', !checkFormValid());
+	};
+
+	var debounceValidateForm = _.debounce(validateForm, 250);
 
 	var bindFormInputs = function () {
-		form.find('.txt').each(function (i, inp) {
+		inputs.each(function (i, inp) {
 			var input = $(inp);
 			input.keyup(keyup);
+			input.keyup(debounceValidateForm);
 			input.blur(blur);
 			input.data('placeholder', input.attr('placeholder'));
 		});
@@ -32,7 +65,7 @@ ace.contact = (function () {
 
 	var reset = function () {
 		form.get(0).reset();
-		form.find('.txt').each(function (i, inp) {
+		inputs.each(function (i, inp) {
 			trySetPlaceholder($(inp));
 		});
 	};
@@ -66,6 +99,7 @@ ace.contact = (function () {
 
 	var init = function () {
 		form = $('form.contact');
+		inputs = form.find('.txt');
 		btnSend = form.find('.btn.send');
 		bindFormInputs();
 		bindFormSubmit();
