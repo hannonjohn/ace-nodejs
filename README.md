@@ -28,7 +28,7 @@ A Node.js version of [alliedconsulteng.com](http://alliedconsulteng.com)
 
 \- [Jade](https://jade-lang.com) templates
 
-\- [LESS](https://sass-lang.com) CSS preprocessor
+\- [LESS](http://lesscss.org) CSS preprocessor
 
 \- [Grunt](https://gruntjs.com) build system
 
